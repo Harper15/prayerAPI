@@ -1,0 +1,22 @@
+{
+  "name": "prayer-app-backend",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev src/index.ts",
+    "migrate:create": "node-pg-migrate create --config-file=./pg-migrate-config.js",
+    "migrate:up": "node -r dotenv/config node-pg-migrate up",
+    "migrate:down": "node -r dotenv/config node-pg-migrate down",
+    "migrate:redo": "node -r dotenv/config node-pg-migrate redo"
+  },
+  "devDependencies": {
+    "dotenv": "^16.5.0",
+    "node-pg-migrate": "^8.0.3",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.0.0",
+    "ts-node-dev": "^2.0.0"
+  }
+}
